@@ -1,0 +1,42 @@
+{
+  "name": "shopware-vueify",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "shopware",
+    "vue.js",
+    "vue",
+    "jquery"
+  ],
+  "scripts": {
+    "test": "eslint src",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/screeny05/shopware-vueify.git"
+  },
+  "author": "Sebastian Langer <screeny05@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/screeny05/shopware-vueify/issues"
+  },
+  "homepage": "https://github.com/screeny05/shopware-vueify#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.10.2",
+    "eslint-config-shopware": "^1.0.3",
+    "webpack": "^1.13.3"
+  },
+  "eslintConfig": {
+    "extends": "shopware"
+  },
+  "peerDependencies": {
+    "vue": "^2.0.8"
+  }
+}
