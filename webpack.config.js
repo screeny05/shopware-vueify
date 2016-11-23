@@ -13,7 +13,7 @@ module.exports = {
     externals: {
         jquery: 'jQuery',
         vue: 'Vue',
-        'shopware/plugin-base': '$.PluginBase'
+        'shopware/plugin-base': 'var $.PluginBase'
     },
 
     devtool: 'source-map',

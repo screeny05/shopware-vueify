@@ -29,11 +29,9 @@ export default component => ({
             .children()
             .detach();
 
-        this.$wrapperElement = this.$el;
-
         this.$mountPoint = $('<div>')
             .append(this.$children)
-            .appendTo(this.$wrapperElement);
+            .appendTo(this.$el);
 
         // enable $.override()
         const BoundComponent = this.Component.extend(this);
@@ -53,15 +51,13 @@ export default component => ({
 
     _destroy() {
         // trick the base into thinking the wrapper is our element
-        PluginBase.prototype._destroy.call($.extend({}, this, {
-            $el: this.$wrapperElement,
-        }));
+        PluginBase.prototype._destroy.call(this);
 
         // destroy vm instance
         this.vm.$destroy();
 
         // remove vue element from dom and re-add original children
-        this.$wrapperElement
+        this.$el
             .empty()
             .append(this.$children);
     },

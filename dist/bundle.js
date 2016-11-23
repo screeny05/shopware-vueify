@@ -104,9 +104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	            this.$children = this.$el.children().detach();
 	
-	            this.$wrapperElement = this.$el;
-	
-	            this.$mountPoint = (0, _jquery2.default)('<div>').append(this.$children).appendTo(this.$wrapperElement);
+	            this.$mountPoint = (0, _jquery2.default)('<div>').append(this.$children).appendTo(this.$el);
 	
 	            // enable $.override()
 	            var BoundComponent = this.Component.extend(this);
@@ -124,15 +122,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 	        _destroy: function _destroy() {
 	            // trick the base into thinking the wrapper is our element
-	            _pluginBase2.default.prototype._destroy.call(_jquery2.default.extend({}, this, {
-	                $el: this.$wrapperElement
-	            }));
+	            _pluginBase2.default.prototype._destroy.call(this);
 	
 	            // destroy vm instance
 	            this.vm.$destroy();
 	
 	            // remove vue element from dom and re-add original children
-	            this.$wrapperElement.empty().append(this.$children);
+	            this.$el.empty().append(this.$children);
 	        }
 	    };
 	};
@@ -143,7 +139,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+	module.exports = $.PluginBase;
 
 /***/ },
 /* 2 */
