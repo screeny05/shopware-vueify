@@ -154,8 +154,8 @@ When viewport equals anything but xl:
 
 
 
-## Currently unsupported:
-* Slots
+## Notes
+When using slots you will need to use the standalone vue-build.
 
 
 
